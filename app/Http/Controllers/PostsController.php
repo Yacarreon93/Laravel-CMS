@@ -83,4 +83,14 @@ class PostsController extends Controller
     {
         return "This is the destroy method";
     }
+
+    /**
+     * Display contact page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function contact()
+    {
+        return view('contact');
+    }
 }
