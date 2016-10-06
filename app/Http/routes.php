@@ -11,27 +11,4 @@
 |
 */
 
-Route::get('post/{param}', 'PostsController@index');
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-//
-//Route::get('/about', function () {
-//    return "This is an about page.";
-//});
-//
-//Route::get('/contact', function () {
-//    return "This is a contact page.";
-//});
-//
-//Route::get('/post/{id}/{name}', function ($id, $name) {
-//    return "This is the post number " . $id . " " . $name;
-//});
-//
-//Route::get('admin/posts/example', array('as' => 'admin.routes', function() {
-//
-//    $url = route('admin.routes');
-//    return "This is the url: " . $url;
-//
-//}));
+Route::resource('posts', "PostsController");

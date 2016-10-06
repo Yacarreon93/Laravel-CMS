@@ -13,9 +13,9 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($param)
+    public function index()
     {
-        return "It's working -> " . $param;
+        return "It's working";
     }
 
     /**
@@ -25,7 +25,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return "This is the create method";
     }
 
     /**
@@ -36,7 +36,7 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return "This is the store method";
     }
 
     /**
@@ -47,7 +47,7 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        return "This is the show method";
     }
 
     /**
@@ -58,7 +58,7 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return "This is the edit method";
     }
 
     /**
@@ -70,7 +70,7 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return "This is the update method";
     }
 
     /**
@@ -81,6 +81,6 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return "This is the destroy method";
     }
 }
