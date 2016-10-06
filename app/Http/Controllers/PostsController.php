@@ -99,9 +99,9 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showPost($id)
+    public function showPost($id, $name, $pass)
     {
-        return view('post')->with('id',$id);
+        return view('post', compact('id', 'name', 'pass'));
     }
 
 }
