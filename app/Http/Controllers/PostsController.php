@@ -93,4 +93,15 @@ class PostsController extends Controller
     {
         return view('contact');
     }
+
+    /**
+     * Display post page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showPost($id)
+    {
+        return view('post')->with('id',$id);
+    }
+
 }
