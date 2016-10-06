@@ -26,3 +26,10 @@ Route::get('/contact', function () {
 Route::get('/post/{id}/{name}', function ($id, $name) {
     return "This is the post number " . $id . " " . $name;
 });
+
+Route::get('admin/posts/example', array('as' => 'admin.routes', function() {
+
+    $url = route('admin.routes');
+    return "This is the url: " . $url;
+
+}));
