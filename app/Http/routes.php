@@ -25,19 +25,19 @@ Route::get('/insert', function() {
 
 });
 
-Route::get('/read', function() {
-
-    $results = DB::select('SELECT * FROM posts WHERE id = ?', [1]);
-
-//    foreach ($results as $post) {
+//Route::get('/read', function() {
 //
-//        return $post->title;
+//    $results = DB::select('SELECT * FROM posts WHERE id = ?', [1]);
 //
-//    }
-
-    return var_dump($results);
-
-});
+////    foreach ($results as $post) {
+////
+////        return $post->title;
+////
+////    }
+//
+//    return var_dump($results);
+//
+//});
 
 Route::get('/update', function() {
 
@@ -52,5 +52,35 @@ Route::get('/delete', function() {
     $deleted = DB::delete('DELETE FROM posts WHERE id = ?', [1]);
 
     return $deleted;
+
+});
+
+/*
+|--------------------------------------------------------------------------
+| Eloquent
+|--------------------------------------------------------------------------
+*/
+
+use App\Post;
+
+Route::get('/read', function() {
+
+    $posts = Post::all();
+
+//    foreach($posts as $post) {
+//
+//        return $post->title;
+//
+//    }
+//
+    return $posts;
+
+});
+
+Route::get('/find', function() {
+
+    $post = Post::find(2);
+
+    return $post;
 
 });
