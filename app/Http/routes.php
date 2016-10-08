@@ -38,3 +38,11 @@ Route::get('/read', function() {
     return var_dump($results);
 
 });
+
+Route::get('/update', function() {
+
+    $updated = DB::update('UPDATE posts SET title = ? WHERE id = ?', ["Updated title", 1]);
+
+    return $updated;
+
+});
