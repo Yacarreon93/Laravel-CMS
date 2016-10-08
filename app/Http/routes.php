@@ -11,8 +11,16 @@
 |
 */
 
+use Illuminate\Support\Facades\DB;
+
 Route::resource('posts', "PostsController");
 
 Route::get('/contact', "PostsController@contact");
 
 Route::get('/post/{id}/{name}/{pass}', "PostsController@showPost");
+
+Route::get('/insert', function() {
+
+    DB::insert('INSERT INTO posts(title, content) VALUES(?, ?)', ['PHP with Laravel', 'PHP with Laravel is the best thing ever']);
+
+});
