@@ -84,3 +84,11 @@ Route::get('/find', function() {
     return $post;
 
 });
+
+Route::get('/findwhere', function() {
+
+    $posts = Post::where('id', 3)->orderBy('id', 'DESC')->take(1)->get();
+
+    return $posts;
+
+});
