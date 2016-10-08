@@ -24,3 +24,17 @@ Route::get('/insert', function() {
     DB::insert('INSERT INTO posts(title, content) VALUES(?, ?)', ['PHP with Laravel', 'PHP with Laravel is the best thing ever']);
 
 });
+
+Route::get('/read', function() {
+
+    $results = DB::select('SELECT * FROM posts WHERE id = ?', [1]);
+
+//    foreach ($results as $post) {
+//
+//        return $post->title;
+//
+//    }
+
+    return var_dump($results);
+
+});
