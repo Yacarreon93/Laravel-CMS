@@ -122,3 +122,9 @@ Route::get('/basicupdate', function() {
     $post->save();
 
 });
+
+Route::get('/create', function () {
+
+    Post::create(['title' => 'New title', 'content' => 'New content']);
+    
+});
