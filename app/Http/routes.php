@@ -92,3 +92,33 @@ Route::get('/findwhere', function() {
     return $posts;
 
 });
+
+//Route::get('/findmore', function() {
+//
+////    $posts = Post::findOrFail(1);
+////
+////    return $posts;
+//
+//});
+
+Route::get('/basicinsert', function() {
+
+    $post = new Post;
+
+    $post->title = "New Eloquent title insert";
+    $post->content = "Wow Eloquent is really cool";
+
+    $post->save();
+
+});
+
+Route::get('/basicupdate', function() {
+
+    $post = Post::find(3);
+
+    $post->title = "New Eloquent title insert";
+    $post->content = "Wow Eloquent is really cool";
+
+    $post->save();
+
+});
