@@ -128,3 +128,9 @@ Route::get('/create', function () {
     Post::create(['title' => 'New title', 'content' => 'New content']);
     
 });
+
+Route::get('/update', function() {
+
+    Post::where('id', 2)->where('is_admin', 0)->update(['title' => 'Updated', 'content' => 'Updated content']);
+
+});
