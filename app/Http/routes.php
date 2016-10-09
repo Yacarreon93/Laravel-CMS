@@ -1,5 +1,8 @@
 <?php
 
+use App\Post;
+use App\User;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -60,8 +63,6 @@ Route::get('/delete', function() {
 | Eloquent
 |--------------------------------------------------------------------------
 */
-
-use App\Post;
 
 Route::get('/read', function() {
 
@@ -173,5 +174,17 @@ Route::get('/restoresoftdelete', function() {
 Route::get('/forcedelete', function() {
 
     Post::onlyTrashed()->where('id', 3)->forceDelete();
+
+});
+
+/*
+|--------------------------------------------------------------------------
+| Eloquent Relationships
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/user/{id}/post/', function($id) {
+
+    return User::find($id)->post;
 
 });
