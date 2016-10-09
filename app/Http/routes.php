@@ -169,3 +169,9 @@ Route::get('/restoresoftdelete', function() {
     Post::withTrashed()->where('id', 1)->restore();
 
 });
+
+Route::get('/forcedelete', function() {
+
+    Post::onlyTrashed()->where('id', 3)->forceDelete();
+
+});
