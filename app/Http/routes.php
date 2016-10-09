@@ -152,6 +152,14 @@ Route::get('/delete2', function() {
 
 Route::get('/softdelete', function() {
 
-    Post::find(1)->delete();
+    Post::find(2)->delete();
+
+});
+
+Route::get('/readsoftdelete', function() {
+
+    $posts = Post::onlyTrashed()->get();
+
+    return $posts;
 
 });
