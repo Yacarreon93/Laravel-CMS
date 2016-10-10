@@ -235,3 +235,15 @@ Route::get('/role/{id}/user', function($id) {
     }
 
 });
+
+Route::get('/user/{id}/pivot', function($id) {
+
+    $user = User::find($id);
+
+    foreach ($user->roles as $role) {
+
+        echo $role->pivot->created_at . ' ';
+
+    }
+
+});
