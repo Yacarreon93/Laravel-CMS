@@ -5,6 +5,7 @@ use App\User;
 use App\Role;
 use App\Country;
 use App\Photo;
+use App\Tag;
 
 /*
 |--------------------------------------------------------------------------
@@ -295,3 +296,28 @@ Route::get('/photo/{id}/post', function($id) {
 
 });
 
+Route::get('/post/{id}/tags', function($id) {
+
+    $post = Post::find($id);
+
+    foreach($post->tags as $tag) {
+
+        echo $tag->name;
+        echo '<br>';
+
+    }
+
+});
+
+Route::get('/tag/{id}/posts', function($id){
+
+    $tag = Tag::find($id);
+
+    foreach($tag->posts as $post) {
+
+        echo $post->title;
+        echo '<br>';
+
+    }
+
+});
