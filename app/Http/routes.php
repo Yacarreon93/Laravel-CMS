@@ -294,3 +294,4 @@ Route::get('/photo/{id}/post', function($id) {
     return $photo->imageable;
 
 });
+
