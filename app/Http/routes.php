@@ -2,6 +2,7 @@
 
 use App\Post;
 use App\User;
+use App\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -216,6 +217,19 @@ Route::get('/user/{id}/role', function($id) {
     foreach($roles as $role) {
 
         echo $role->name;
+        echo '<br>';
+
+    }
+
+});
+
+Route::get('/role/{id}/user', function($id) {
+
+    $users = Role::find($id)->users;
+
+    foreach($users as $user) {
+
+        echo $user->name;
         echo '<br>';
 
     }
