@@ -207,3 +207,17 @@ Route::get('/posts', function() {
     }
 
 });
+
+Route::get('/user/{id}/role', function($id) {
+
+    $roles = User::find($id)->roles;
+//  $roles = User::find($id)->roles()->orderBy('id', 'DESC')->get();
+
+    foreach($roles as $role) {
+
+        echo $role->name;
+        echo '<br>';
+
+    }
+
+});
